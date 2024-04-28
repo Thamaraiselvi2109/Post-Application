@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { SelectAllPost } from "./PostSlice";
 import TimeAge from "./TimeAge";
+import { reverse } from "lodash";
 
 
 const ShowPost = () => {
@@ -16,11 +17,12 @@ const ShowPost = () => {
       <p>{data.content.substring(0,200)}</p>
     </div>
   ));
+  const Orderedposts = reverse(renderPosts)
 
   return (
     <div className="py-5">
       <h3>Latest Posts :</h3>
-      <div className="row pt-3">{renderPosts}</div>
+      <div className="row pt-3">{Orderedposts}</div>
     </div>
   );
 };
