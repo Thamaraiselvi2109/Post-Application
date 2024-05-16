@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { SelectAllPost } from "./PostSlice";
 import TimeAge from "./TimeAge";
 import { reverse } from "lodash";
+import Reactionbtns from "./Reactionbtns";
 
 
 const ShowPost = () => {
@@ -15,6 +16,7 @@ const ShowPost = () => {
       <h6>{data.title}</h6>
       <p>By {data.author} - <TimeAge timeStamp={data.date}/></p>
       <p>{data.content.substring(0,200)}</p>
+      {/* <Reactionbtns/> */}
     </div>
   ));
   const Orderedposts = reverse(renderPosts)
